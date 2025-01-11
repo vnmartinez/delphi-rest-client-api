@@ -109,8 +109,9 @@ begin
   ssl := TIdSSLIOHandlerSocketOpenSSL.Create(FIdHttp);
   ssl.OnVerifyPeer := IdSSLIOHandlerSocketOpenSSL1VerifyPeer;
 
-  {$if defined(DELPHI_7) or defined(DELPHI_2007) or
-       defined(DELPHI_2009) or defined(DELPHI_2010)}
+  {$if defined(DELPHI_7)    or defined(DELPHI_2006) or
+       defined(DELPHI_2007) or defined(DELPHI_2009) or 
+       defined(DELPHI_2010) }
     ssl.SSLOptions.Method := sslvTLSv1;
   {$ifend}
 
